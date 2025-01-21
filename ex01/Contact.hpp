@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:32:00 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/19 11:02:01 by gozon            ###   ########.fr       */
+/*   Updated: 2025/01/21 10:55:05 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include <string>
 
-class Contact
-{
+class Contact {
 private:
 
 	std::string firstName;

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:52:40 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/21 11:21:34 by gozon            ###   ########.fr       */
+/*   Created: 2025/01/21 11:05:52 by gozon             #+#    #+#             */
+/*   Updated: 2025/01/21 11:26:30 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-class Phonebook {
-	private:
+void Phonebook::addContact(Phonebook phonebook, Contact contact)
+{
+	phonebook.maxContactIndex += 1;
+	for (int i = phonebook.maxContactIndex; i > 0; i--)
+		phonebook.contacts[i] = phonebook.contacts[i - 1];
+	phonebook.contacts[0] = contact;
+}
 
-		Contact contacts[8];
-		int		maxContactIndex = -1;
-
-	public:
-		void addContact(Phonebook phonebook, Contact contact);
-		Contact getContact(Phonebook phonebook, int index);
-};
+Contact Phonebook::getContact(Phonebook phonebook, int index)
+{
+	return (phonebook.contacts[index]);
+}
