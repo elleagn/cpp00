@@ -6,34 +6,52 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:50:35 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/19 11:33:59 by gozon            ###   ########.fr       */
+/*   Updated: 2025/01/21 13:43:36 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact(std::string firstName, std::string lastName,
-	std::string nickname, std::string phoneNumber, std::string darkestSecret) :
-	firstName(firstName), lastName(lastName), nickname(nickname),
-	phoneNumber(phoneNumber), darkestSecret(darkestSecret){
+
+// Contact::Contact(){
+// }
+
+void Contact::setFirstName(std::string firstName){
+	this->firstName = firstName;
 }
 
-std::string Contact::getFirstName(Contact contact) {
-	return contact.firstName;
+void Contact::setLastName(std::string lastName){
+	this->lastName = lastName;
 }
 
-std::string Contact::getLastName(Contact contact) {
-	return contact.lastName;
+void Contact::setNickname(std::string nickname){
+	this->nickname = nickname;
 }
 
-std::string Contact::getNickname(Contact contact) {
-	return contact.nickname;
+void Contact::setPhoneNumber(std::string phoneNumber){
+	this->phoneNumber = phoneNumber;
 }
 
-std::string Contact::getPhoneNumber(Contact contact) {
-	return contact.phoneNumber;
+void Contact::setDarkestSecret(std::string darkestSecret){
+	this->darkestSecret = darkestSecret;
 }
 
-std::string Contact::getDarkestSecret(Contact contact) {
-	return contact.darkestSecret;
+std::string Contact::getFirstName(void) const {
+	return (this->firstName);
+}
+
+std::string Contact::getLastName(void) const {
+	return (this->lastName);
+}
+
+std::string Contact::getNickname(void) const {
+	return (this->nickname);
+}
+
+std::string Contact::getPhoneNumber(void) const {
+	return (this->phoneNumber);
+}
+
+std::string Contact::getDarkestSecret(void) const {
+	return (this->darkestSecret);
 }

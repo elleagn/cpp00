@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:32:00 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/21 10:55:05 by gozon            ###   ########.fr       */
+/*   Updated: 2025/01/21 13:40:14 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,17 @@ private:
 
 public:
 
-	Contact(std::string firstName, std::string lastName, std::string nickname,
-		std::string phoneNumber, std::string darkestSecret);
-	std::string getFirstName(Contact contact);
-	std::string getLastName(Contact contact);
-	std::string getNickname(Contact contact);
-	std::string getPhoneNumber(Contact contact);
-	std::string getDarkestSecret(Contact contact);
+	// Contact();
+	void setFirstName(std::string firstName);
+	void setLastName(std::string lastName);
+	void setNickname(std::string nickname);
+	void setPhoneNumber(std::string phoneNumber);
+	void setDarkestSecret(std::string darkestSecret);
+	std::string getFirstName(void) const;
+	std::string getLastName(void) const;
+	std::string getNickname(void) const;
+	std::string getPhoneNumber(void) const;
+	std::string getDarkestSecret(void) const;
 };
 
 #endif

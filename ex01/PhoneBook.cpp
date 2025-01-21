@@ -6,22 +6,27 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:05:52 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/21 12:01:19 by gozon            ###   ########.fr       */
+/*   Updated: 2025/01/21 13:39:00 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void Phonebook::addContact(Phonebook phoneBook, Contact contact)
-{
-	if (phoneBook.maxContactIndex < 7)
-		phoneBook.maxContactIndex += 1;
-	for (int i = phoneBook.maxContactIndex; i > 0; i--)
-		phoneBook.contacts[i] = phoneBook.contacts[i - 1];
-	phoneBook.contacts[0] = contact;
+
+Phonebook::Phonebook() : maxContactIndex(-1) {
+
 }
 
-Contact Phonebook::getContact(Phonebook phoneBook, int index)
+void Phonebook::addContact(Contact contact)
 {
-	return (phoneBook.contacts[index]);
+	if (this->maxContactIndex < 7)
+		this->maxContactIndex += 1;
+	for (int i = this->maxContactIndex; i > 0; i--)
+		this->contacts[i] = this->contacts[i - 1];
+	this->contacts[0] = contact;
+}
+
+Contact Phonebook::getContact(int index)
+{
+	return (this->contacts[index]);
 }
