@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gozon <gozon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/27 13:33:00 by gozon             #+#    #+#              #
-#    Updated: 2025/01/18 11:03:02 by gozon            ###   ########.fr        #
+#    Created: 2025/01/18 11:02:35 by gozon             #+#    #+#              #
+#    Updated: 2025/01/18 11:12:46 by gozon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRC_DIR = srcs
 SRC_FILES =	megaphone.cpp
 OBJ_DIR = objects
 OBJ = $(SRC_FILES:%.cpp=$(OBJ_DIR)/%.o)
+DEPS = $(OBJ:.o=.d)
 
 # Symboles Unicode
 CHECK_MARK = ✔
@@ -26,6 +27,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) $(OBJ) -o $(NAME)
 	@echo "$(NAME) a été créé avec succès ($(CHECK_MARK))"
+
+include $(DEPS)
 
 $(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
