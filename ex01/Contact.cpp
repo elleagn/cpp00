@@ -6,52 +6,56 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 10:50:35 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/21 13:43:36 by gozon            ###   ########.fr       */
+/*   Updated: 2025/01/22 19:05:29 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
+static std::string	inputField(std::string field) {
+	std::string	input;
 
-// Contact::Contact(){
-// }
-
-void Contact::setFirstName(std::string firstName){
-	this->firstName = firstName;
+	while (true) {
+		std::cout << field << ": ";
+		std::cin >> input;
+		if (input != "")
+			break;
+		std::cout << "Empty fields are not accepted." << std::endl;
+	}
+	return (input);
 }
 
-void Contact::setLastName(std::string lastName){
-	this->lastName = lastName;
+void	Contact::inputInfos() {
+	std::string	input;
+	Contact		contact;
+
+	std::cout << "Input your contact informations." << std::endl;
+	this->firstName = inputField("First Name");
+	this->lastName = inputField("Last Name");
+	this->nickname = inputField("Nickname");
+	this->phoneNumber = inputField("Phone Number");
+	this->darkestSecret = inputField("Darkest Secret");
 }
 
-void Contact::setNickname(std::string nickname){
-	this->nickname = nickname;
+static std::string	formatString(std::string str) {
+	if (str.length() > 10) {
+		str.resize(9);
+		str += ".";
+	}
+	return (str);
 }
 
-void Contact::setPhoneNumber(std::string phoneNumber){
-	this->phoneNumber = phoneNumber;
+void	Contact::printHorizontal(int index) const {
+	std::cout << std::setw(10) << index << " | ";
+	std::cout << std::setw(10) << formatString(this->firstName) << " | ";
+	std::cout << std::setw(10) << formatString(this->lastName) << " | ";
+	std::cout << std::setw(10) << formatString(this->nickname) << std::endl;
 }
 
-void Contact::setDarkestSecret(std::string darkestSecret){
-	this->darkestSecret = darkestSecret;
-}
-
-std::string Contact::getFirstName(void) const {
-	return (this->firstName);
-}
-
-std::string Contact::getLastName(void) const {
-	return (this->lastName);
-}
-
-std::string Contact::getNickname(void) const {
-	return (this->nickname);
-}
-
-std::string Contact::getPhoneNumber(void) const {
-	return (this->phoneNumber);
-}
-
-std::string Contact::getDarkestSecret(void) const {
-	return (this->darkestSecret);
+void	Contact::printVertical() const {
+	std::cout << "First Name:     " << this->firstName << std::endl;
+	std::cout << "Last Name:      " << this->lastName << std::endl;
+	std::cout << "Nickname:       " << this->nickname << std::endl;
+	std::cout << "Phone Number:   " << this->phoneNumber << std::endl;
+	std::cout << "Darkest Secret: " << this->darkestSecret << std::endl;
 }
