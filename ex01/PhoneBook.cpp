@@ -24,7 +24,7 @@ void Phonebook::addContact() {
     else {
         std::cout << "Phonebook full. This will erase your oldest contact.\n"
                   << "Proceed anyway? [y/N] ";
-        std::cin >> answer;
+        std::getline(std::cin, answer);
         if (answer != "y" && answer != "Y")
             return ;
     }

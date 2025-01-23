@@ -17,7 +17,7 @@ static std::string  inputField(std::string field) {
 
     while (input == "") {
         std::cout << field << ": ";
-        std::cin >> input;
+        std::getline(std::cin, input);
         if (input == "")
             std::cout << "Empty fields are not accepted." << std::endl;
     }

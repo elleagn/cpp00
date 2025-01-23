@@ -12,12 +12,13 @@
 
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <iomanip>
 
 std::string inputCommand(void) {
-    std::string input;
+    std::string input = "";
 
     std::cout << "Enter a command: ";
-    std::cin >> input;
+    std::getline(std::cin, input);
     if (input != "EXIT" && input != "ADD" && input != "SEARCH")
     {
         std::cout << "Invalid command." << std::endl;
@@ -33,7 +34,7 @@ void searchPhoneBook(Phonebook phoneBook) {
 
     while (index == "") {
         std::cout << "Enter your index: ";
-        std::cin >> index;
+        std::getline(std::cin, index);
 
         if (index.length() == 0)
             break;

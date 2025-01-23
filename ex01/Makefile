@@ -14,7 +14,7 @@ NAME = megaphone
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC_DIR = srcs
-SRC_FILES =	PhoneBook.cpp Contact.cpp add.cpp search.cpp main.cpp
+SRC_FILES =	PhoneBook.cpp Contact.cpp main.cpp
 OBJ_DIR = objects
 OBJ = $(SRC_FILES:%.cpp=$(OBJ_DIR)/%.o)
 
