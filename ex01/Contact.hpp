@@ -17,21 +17,20 @@
 # include <iostream>
 # include <iomanip>
 
-class	Contact
-{
-	private:
+class	Contact {
+    private:
 
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickname;
-		std::string	phoneNumber;
-		std::string	darkestSecret;
+        std::string firstName;
+        std::string lastName;
+        std::string nickname;
+        std::string phoneNumber;
+        std::string darkestSecret;
 
-	public:
+    public:
 
-		void		inputInfos();
-		void		printHorizontal(int index) const;
-		void		printVertical() const;
+        void        inputInfos();
+        void        printHorizontal(int index) const;
+        void        printVertical() const;
 };
 
 #endif

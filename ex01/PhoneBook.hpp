@@ -18,16 +18,16 @@
 # include "Contact.hpp"
 
 class	Phonebook {
-	private:
+    private:
 
-		Contact	contacts[8];
-		int		nbContact;
+        Contact contacts[8];
+        int     nbContact;
 
-	public:
-				Phonebook();
-		void	addContact(Contact contact);
-		void	printAll() const;
-		bool	printContact(int index) const;
+    public:
+                Phonebook();
+        void    addContact(void);
+        void    printAll() const;
+        bool    printContact(int index) const;
 };
 
 #endif
