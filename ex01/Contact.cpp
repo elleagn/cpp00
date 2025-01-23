@@ -28,12 +28,13 @@ void    Contact::inputInfos() {
     std::string input;
     Contact     contact;
 
-    std::cout << "Input your contact informations." << std::endl;
+    std::cout << "\nInput your contact informations." << std::endl;
     this->firstName = inputField("First Name");
     this->lastName = inputField("Last Name");
     this->nickname = inputField("Nickname");
     this->phoneNumber = inputField("Phone Number");
     this->darkestSecret = inputField("Darkest Secret");
+    std::cout << std::endl;
 }
 
 static std::string  formatString(std::string str) {

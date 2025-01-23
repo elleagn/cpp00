@@ -38,13 +38,12 @@ void searchPhoneBook(Phonebook phoneBook) {
 
         if (index.length() == 0)
             break;
-        if (index.length() != 1 || (index[0] < '0' && index[0] > '9'))
+        if (index.length() != 1 || (index[0] < '0' || index[0] > '9'))
         {
             std::cout << "Invalid format." << std::endl;
             index = "";
         }
-
-        if (!phoneBook.printContact(index[0] - '0'))
+        else if (!phoneBook.printContact(index[0] - '0'))
             index = "";
     }
 }
@@ -54,7 +53,7 @@ int	main(void){
     Phonebook   phoneBook;
     Contact     contact;
 
-    std::cout << "Welcome to MyAwesomePhonebook !" << std::endl;
+    std::cout << "Welcome to MyAwesomePhonebook !\n" << std::endl;
     while (1)
     {
         std::cout << "Available commands: ADD, SEARCH, EXIT." << std::endl;

@@ -37,10 +37,10 @@ void Phonebook::addContact() {
 }
 
 bool    Phonebook::printContact(int index) const {
-    if (index < 0 || index > this->nbContact)
+    if (index < 0 || index >= this->nbContact)
     {
         std::cout << "Invalid index. Please enter a number between 0 and "
-                  << index << ".\n";
+                  << this->nbContact << ".\n";
         return (false);
     }
 
@@ -49,14 +49,19 @@ bool    Phonebook::printContact(int index) const {
 }
 
 void    Phonebook::printAll() const {
-    if (this->nbContact == 0)
-        std::cout << "Your phonebook is empty." << std::endl;
+    if (this->nbContact == 0) {
+        std::cout << "\nYour phonebook is empty.\n" << std::endl;
+        return ;
+    }
 
-    std::cout << std::left << std::setw(10) << "Index" << " | "
-              << std::left << std::setw(10) << "First Name" << " | "
-              << std::left << std::setw(10) << "Last Name" << " | "
-              << std::left << std::setw(10) << "Nickname" << std::endl;
+    std::cout << "\n" << std::left << std::setw(10) << "Index" << " | "
+              << std::setw(10) << "First Name" << " | "
+              << std::setw(10) << "Last Name" << " | "
+              << std::setw(10) << "Nickname" << std::endl << std::right
+              << std::setw(49) << std::setfill('-') << "" << std::endl
+              << std::setfill(' ');
 
     for (int i = 0; i < this->nbContact; i++)
         this->contacts[i].printHorizontal(i);
+    std::cout << std::endl;
 }
