@@ -45,6 +45,8 @@ void searchPhoneBook(Phonebook phoneBook) {
         }
         else if (!phoneBook.printContact(index[0] - '0'))
             index = "";
+        else
+            std::cout << std::endl;
     }
 }
 
