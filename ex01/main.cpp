@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 11:28:11 by gozon             #+#    #+#             */
-/*   Updated: 2025/01/21 14:05:09 by gozon            ###   ########.fr       */
+/*   Updated: 2025/01/27 08:12:36 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iomanip>
 
 std::string inputCommand(void) {
+
     std::string input = "";
 
     std::cout << "Enter a command: ";
@@ -25,9 +26,11 @@ std::string inputCommand(void) {
         input = "";
     }
     return (input);
+
 }
 
 void searchPhoneBook(Phonebook phoneBook) {
+
     std::string index = "";
 
     phoneBook.printAll();
@@ -37,7 +40,10 @@ void searchPhoneBook(Phonebook phoneBook) {
         std::getline(std::cin, index);
 
         if (index.length() == 0)
+        {
+            std::cout << std::endl;
             break;
+        }
         if (index.length() != 1 || (index[0] < '0' || index[0] > '9'))
         {
             std::cout << "Invalid format." << std::endl;
@@ -48,9 +54,11 @@ void searchPhoneBook(Phonebook phoneBook) {
         else
             std::cout << std::endl;
     }
+
 }
 
-int	main(void){
+int	main(void) {
+
     std::string command;
     Phonebook   phoneBook;
     Contact     contact;
@@ -67,4 +75,7 @@ int	main(void){
         else if (command == "SEARCH")
             searchPhoneBook(phoneBook);
     }
+    std::cout << "Goodbye !" << std::endl;
+    return (0);
+
 }

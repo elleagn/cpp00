@@ -1,3 +1,5 @@
 .vscode
-**/objects
-**/megaphone
+accounts
+objects
+megaphone
+phonebook
